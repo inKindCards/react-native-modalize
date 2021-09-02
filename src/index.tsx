@@ -131,7 +131,6 @@ const ModalizeBase = (
     onBackButtonPress,
     onPositionChange,
     onOverlayPress,
-    onLayout,
   }: IProps,
   ref: React.Ref<React.ReactNode>,
 ): JSX.Element | null => {
@@ -395,7 +394,7 @@ const ModalizeBase = (
     setDisableScroll(shorterHeight && disableScrollIfPossible);
   };
 
-  const handleContentLayout = (width: number, height: number): void => {
+  const handleContentLayout = (_: number, height: number): void => {
     if (alwaysOpen && adjustToContentHeight) {
       return setModalHeightValue(height);
     }
